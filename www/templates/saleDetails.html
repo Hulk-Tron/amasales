@@ -1,0 +1,32 @@
+<ion-view>
+<ion-nav-bar class="bar-positive">
+     <ion-nav-title style="font-family: 'Josefin Sans', sans-serif">Sales Details</ion-nav-title>
+  <ion-nav-buttons side="left" ng-click="back()">
+      <i ng-click="back()" class="ion-android-arrow-back" style="margin-left:3%;font-size:32px"></i>
+			<!--<button class="ion-android-arrow-back" menu-toggle="left">
+			</button>-->
+		</ion-nav-buttons>
+</ion-nav-bar>        
+    <!--<ion-nav-back-button >-->
+      
+    <!--</ion-nav-back-button>-->
+
+<ion-content style="font-family: 'Josefin Sans', sans-serif">
+<div class="card">
+     <div style="background-image:url('img/sale.png') ;background-size: cover;width:90%;height:40%;background-repeat:norepeat;margin-left:5%;margin-top:2%;margin-bottom:5%;background-position:center;border-radius:0.2em;padding:5px">
+         <!--<h3 style="text-align:center">Img</h3>-->
+         <h2 style="margin-left:5%;margin-top:10%"><b>{{sale.store}}</b></h2>
+     </div>
+     <p style="margin-left:5%"><b>Sales Description</b> : {{sale.description}}</p>
+      <p style="margin-left:5%"><b>Stocklist</b> : {{sale.stocklist}}</p>
+     <p style="margin-left:5%"><b>Start Date</b> : {{sale.startdate}}</p>
+     <p style="margin-left:5%"><b>End Date</b> : {{sale.enddate}}</p>
+
+<p style="margin-top:30%;margin-left:5%"> Details of the store below :</p>
+<p style="margin-left:5%"><b>Address</b> : {{sale.address}}</p>
+<p style="margin-left:5%"><b>Phone no</b> : {{sale.phone}}</p>
+<a style="margin-left:5%;text-decoration:none;color:black" href="mailto:{{deta.email}}"><b>Email</b> : {{sale.email}}</a>
+</div>
+</ion-content>
+
+</ion-view>

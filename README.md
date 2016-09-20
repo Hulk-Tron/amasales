@@ -1,0 +1,1 @@
+"Hybird Application AmaSales" 
