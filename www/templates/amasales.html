@@ -1,19 +1,41 @@
 
 <ion-view>
     <ion-nav-title style="font-family: 'Josefin Sans', sans-serif" align-title="left">AmaSales</ion-nav-title>
-<ion-content padding="true" style="font-family: 'Josefin Sans', sans-serif;background-color:#F5F5F5">
-<div class="card" ng-repeat="ama in data.results">
-        <a style="text-decoration:none;color:black" href="#/saleDetails/{{$index}}">
+<ion-content padding="true" scroll="true" style="padding-bottom:20px;font-family: 'Josefin Sans', sans-serif;background-color:#F5F5F5">
+<!--<div class="card" ">-->
+        <!--<a style="text-decoration:none;color:black" href="#/amasales/saleDetails/{{$index}}">
          <p>
              <!--<i class="ion-image" style="font-size:70px;margin-left:3%;margin-top:5%;color:#41B4BB;float:left"></i>-->
-             <img src="img/discount.jpg" style="font-size:70px;width:23%;height:20%;margin-left:3%;margin-top:5%;color:#41B4BB;float:left">
+             <!--<img src="img/discount.jpg" style="font-size:70px;width:23%;height:20%;margin-left:3%;margin-top:5%;color:#41B4BB;float:left">
           </p>
           <p style="margin-left:28%" ng-click="details(ama)"><b>{{ama.store}}</b></p>
           <p style="margin-left:28%;margin-right:3%" ng-click="details(ama)">{{ama.description}}</p>
                <p style="margin-left:28%;font-size:11px" ng-click="details(ama)">
                Sales end on: {{ama.enddate}}</p>
-        </a>
-               </div>
+        </a>-->
+        <!--<div class="list" >
+
+    <a class="item item-thumbnail-left" ng-repeat="ama in data.results "  style="margin-top:2%"  href="#/tab/amasales/saleDetails/{{$index}}">
+      <img src="img/saletag.png">
+      <h2>{{ama.store}}</h2>
+      <p>{{ama.description}}</p>
+      <p>Sales end on: {{ama.enddate}}</p>
+    </a>
+</div>-->
+ <div class="list">
+
+    <a class="item item-avatar" ng-repeat="ama in data.results "  href="#/tab/amasales/saleDetails/{{$index}}">
+      <img src="img/saletag.png">
+      <h2>{{ama.store}}</h2>
+      <p>{{ama.description}}</p>
+      <p>Sales end on: {{ama.enddate}}</p>
+
+    </a>
+
+</div>
+  <img id="mySpinner" src="img/ripple.svg" style="position:relative;text-align:center;margin-top:50%;width:15%;margin-left:40%" ng-show="loading" />
+ 
+               <!--</div>-->
 </ion-content>
 
 

@@ -22,6 +22,26 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+.run(function($ionicPlatform, $ionicPopup) {
+  $ionicPlatform.ready(function() {
+
+    // Check for network connection
+    if(window.Connection) {
+      if(navigator.connection.type == Connection.NONE) {
+        $ionicPopup.confirm({
+          title: 'No Internet Connection',
+          content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
+        })
+        .then(function(result) {
+          if(!result) {
+            ionic.Platform.exitApp();
+          }
+        });
+      }
+    }
+
+  });
+})
 .config(function($ionicConfigProvider,$stateProvider, $urlRouterProvider) {
 $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
@@ -30,8 +50,9 @@ $ionicConfigProvider.tabs.position('bottom');
       abstract: true,
       templateUrl: "templates/tabs.html"
     })
-    .state('tabs.amasales', {
+    .state('amasales', {
       url: "/amasales",
+      parent: 'tabs',
       views: {
         'amasales-tab': {
           templateUrl: "templates/amasales.html",
@@ -40,10 +61,10 @@ $ionicConfigProvider.tabs.position('bottom');
      
       }
     })
-     .state('saleDetails', {
+     .state('amasales.saleDetails', {
       url: "/saleDetails/:index",
       views: {
-        '': {
+        'amasales-tab@tabs': {
           templateUrl: "templates/saleDetails.html",
           controller: 'saleDetails'
         }
